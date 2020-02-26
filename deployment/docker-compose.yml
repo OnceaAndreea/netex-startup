@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: new-postgres:latest
+    container_name: final-postgres
+    ports:
+      - 5433:5432
+
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: maria123
+      MYSQL_DATABASE: mymariadb
+      MYSQL_USER: mariadb
+      MYSQL_PASSWORD: mariadb
+    container_name: final-mariadb
+    ports:
+      - 3366:3306
+
+  app:
+    image: my-app:1.0
+    container_name: final-application
+    depends_on:
+      - postgres
+      - mariadb
+    ports:
+      - 8081:8080

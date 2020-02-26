@@ -1,0 +1,9 @@
+function savePerson() {
+    var criteria = new Criteria1();
+    if(criteria.firstName == null || criteria.lastName == null || criteria.age == null) {
+        alert("First name, last name and age are required!!");
+    }
+    else {
+        sendRequest("POST", "person/saveInMariaDB?" + $.param(criteria), null, getUserSuccessHandler1, getUserErrorHandler);
+    }
+}

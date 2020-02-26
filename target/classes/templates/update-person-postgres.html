@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+label, input {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+  width: 8%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #D7DBDD  ;
+  color: black;
+}
+
+.button{
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 10px 18px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+margin: 2px 2px;
+cursor: pointer;
+}
+    </style>
+</head>
+<body>
+<form action="#"
+      th:action="@{/updatePostgres/{id}(id=${person.id})}"
+      th:object="${person}"
+      method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <label for="firstName"> First Name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+    <label for="lastName">Last Name</label>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+    <label for="age"> Age </label>
+    <input type="text" th:field="*{age}" id="age" placeholder="Age">
+    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    <input type="submit" value="Update Person" class="button">
+</form>
+</body>

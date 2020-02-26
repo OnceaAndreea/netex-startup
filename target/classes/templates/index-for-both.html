@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:switch="${personsInMaria}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No persons yet!</h2>
+    <div th:case="*">
+        <h2>Persons Stored in MariaDB</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person : ${personsInMaria}">
+                <td th:text="${person.firstName}"></td>
+                <td th:text="${person.lastName}"></td>
+                <td th:text="${person.age}"></td>
+                <td><a th:href="@{/edit/{id}(id=${person.id})}">Edit</a></td>
+                <td><a th:href="@{/delete/{id}(id=${person.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div th:switch="${personsInPostgres}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h2 th:case="null">No persons yet!</h2>
+    <div th:case="*">
+        <h2>Persons Stored in Postgres</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person : ${personsInPostgres}">
+                <td th:text="${person.firstName}"></td>
+                <td th:text="${person.lastName}"></td>
+                <td th:text="${person.age}"></td>
+                <td><a th:href="@{/editPostgres/{id}(id=${person.id})}">Edit</a></td>
+                <td><a th:href="@{/deletePostgres/{id}(id=${person.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p><a href="/signup">Home</a></p>
+
+<body/>

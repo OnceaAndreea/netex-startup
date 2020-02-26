@@ -1,0 +1,9 @@
+com/netex/training/controller/SimpleController.class
+com/netex/training/configuration/MariaDatabaseConfiguration.class
+com/netex/training/controller/PersonController.class
+com/netex/training/repository/postgres/PersonRepositoryPostgres.class
+com/netex/training/model/Person.class
+com/netex/training/service/PersonService.class
+com/netex/training/Main.class
+com/netex/training/repository/maria/PersonRepositoryMaria.class
+com/netex/training/configuration/PostgresDatabaseConfiguration.class

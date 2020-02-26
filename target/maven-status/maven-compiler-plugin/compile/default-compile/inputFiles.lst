@@ -1,0 +1,9 @@
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/configuration/MariaDatabaseConfiguration.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/configuration/PostgresDatabaseConfiguration.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/controller/PersonController.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/repository/postgres/PersonRepositoryPostgres.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/controller/SimpleController.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/service/PersonService.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/model/Person.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/Main.java
+/home/andreea_oncea/IdeaProjects/Training/src/main/java/com/netex/training/repository/maria/PersonRepositoryMaria.java

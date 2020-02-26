@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+label, input {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+}
+.button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+.button1{
+  background-color: #0080ff;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+input[type=text] {
+  width: 8%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #D7DBDD  ;
+  color: black;
+}
+</style>
+</head>
+<body>
+<form action="#" th:action="@{/addperson}" th:object="${person}" method="post" xmlns:th="http://www.w3.org/1999/xhtml">
+    <label for="firstName">First Name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" >
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+    <label for="lastName">Last Name</label>
+    <input type="text" th:field="*{lastName}" id="lastName" >
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+    <label for="age">Age</label>
+    <input type="text" th:field="*{age}" id="age" >
+    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span></br>
+    <input type="submit" name="action" value="SaveInMariaDB" class="button1">
+    <input type="submit" name="action" value="SaveInPostgres" class="button1">
+    <input type="submit" name="action" value="SaveInBoth" class="button1"></br>
+    <input type="submit" name="action" value="Show Postgres DB" class="button">
+    <input type="submit" name="action" value="Show Maria DB" class="button">
+    <input type="submit" name="action" value="Show Both" class="button">
+</form>
+</body>
+</html>
